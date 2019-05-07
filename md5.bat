@@ -1,9 +1,9 @@
 @echo off
-echo ******è·å–æ–‡ä»¶MD5******
+echo ******»ñÈ¡ÎÄ¼şMD5******
 
-set /p APP_FILE=è¯·è¾“å…¥æ–‡ä»¶è·¯å¾„:
+set /p APP_FILE=ÇëÊäÈëÎÄ¼şÂ·¾¶:
 
-::è·å–md5å€¼
+::»ñÈ¡md5Öµ
 certutil -hashfile %APP_FILE% MD5 >APP_MD5_TXT
 setlocal enabledelayedexpansion
 set index=0
@@ -15,9 +15,9 @@ for /f "tokens=* delims= " %%i in (APP_MD5_TXT) do (
 
 del APP_MD5_TXT
 
-REM ç§»é™¤md5ä¸­çš„ç©ºæ ¼,å…¼å®¹md5å‡ºç°ç©ºæ ¼çš„æƒ…å†µ
+REM ÒÆ³ımd5ÖĞµÄ¿Õ¸ñ,¼æÈİmd5³öÏÖ¿Õ¸ñµÄÇé¿ö
 set md5=%md5: =%
 
-echo å½“å‰æ–‡ä»¶MD5: %md5%
+echo µ±Ç°ÎÄ¼şMD5: %md5%
 pause
 
