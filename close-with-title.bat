@@ -1,10 +1,11 @@
 @echo off
 
 echo **********************************************************
-echo     	              关闭带标题的脚本
+echo     	              鍏抽棴甯︽爣棰樼殑鑴氭湰
 echo **********************************************************
 
 
 set cmd_title=first-title-cmd
 taskkill /f /fi "windowtitle eq %cmd_title%
+
 
