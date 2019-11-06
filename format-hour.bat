@@ -5,6 +5,11 @@ set hour=%time:~0,2%
 ::移除hour中的空格并进行格式化处理(兼容Win Server 2008)
 set hour=%hour: =%
 ::set hour=0
+::set hour=00
+::set hour=01
+::set hour=1
+::set hour=11
+
 
 echo 处理前的hour:%hour%
 
@@ -15,8 +20,10 @@ if "%hour%"=="0" (
    set hour=0%hour%
 ) else (
     if %hour% lss 10 (
-        ::不为0且小于10时直接进行补0
-        set hour=0%hour%
+        ::当hour prefix不为0时则需要进行补0 (e.g: 01 1)
+        if "%hour_prefix%" neq "0" (
+            set hour=0%hour%
+        )
      )
 )
 
